@@ -1,0 +1,105 @@
+.tc-videoController {
+  position: absolute;
+  background: black;
+  color: white;
+
+  border-radius: 5px;
+  padding: 5px;
+  margin: 10px;
+  line-height: 1.8em;
+
+  cursor: default;
+  z-index: 9999999;
+  opacity: 0.3;
+
+  font-family: Verdana;
+  font-size: 13px;
+}
+
+.tc-videoController:hover {
+  opacity: 0.7;
+}
+
+.tc-videoController:hover .tc-controls {
+  display: inline;
+}
+
+.tc-controls {
+  display: none;
+  margin-left:1em;
+}
+
+.tc-controls button {
+  cursor: pointer;
+  color: black !important;
+  background: white !important;
+  font-weight: bold !important;
+  margin: 0 2px !important;
+  border-radius: 5px !important;
+  padding: 3px 8px !important;
+  font-size: 15px !important;
+  line-height: 15px !important;
+}
+
+.tc-videoController button.tc-hideButton {
+  margin: 0 2px 0 20px !important;
+  opacity: 0.8;
+}
+
+/* shift controller when YouTube infobar is present */
+.ytp-block-autohide:not(.el-detailpage):not(.hide-info-bar) .tc-videoController {
+  margin-top: 40px;
+}
+
+body:not(.not-yt-legacy-css) .html5-video-player:not(.ytp-block-autohide):not(.el-detailpage) .tc-videoController {
+    transition: margin-top .25s cubic-bezier(0.4,0,0.2,1);
+    margin-top: 10px;
+}
+
+html[data-player-size=fullscreen] .tc-videoController {
+  display: block;
+  margin-top: 40px;
+}
+
+html[data-player-size=fullscreen] .html5-video-player:not(.ytp-block-autohide) .tc-videoController {
+  transition: opacity .25s cubic-bezier(0.4,0,0.2,1);
+  opacity: 0;
+}
+
+/* new YT player */
+body.not-yt-legacy-css .el-embedded .tc-videoController {
+  margin-top: 50px;
+}
+
+body.not-yt-legacy-css .ytp-fullscreen .tc-videoController {
+  display: block;
+  margin-top: 60px;
+}
+
+body.not-yt-legacy-css .ytp-autohide .tc-videoController {
+  transition: opacity .25s cubic-bezier(0.4,0,0.2,1);
+  opacity: 0;
+}
+
+/* shift controller on Vine embeds: mute always visible */
+/* e.g. https://twitter.com/Vine_Football/status/550614684575858688 */
+.video-container .tc-videoController {
+  margin-top: 12px;
+  margin-left: 55px;
+}
+
+/* shift controller on vine.co */
+/* e.g. https://vine.co/v/OrJj39YlL57 */
+.video-container .vine-video-container .tc-videoController {
+  margin-left: 40px;
+}
+
+/* shift YT 3D controller down */
+/* e.g. https://www.youtube.com/watch?v=erftYPflJzQ */
+.webgl-pan-button {
+  top: 50px !important;
+}
+
+html[data-player-size=fullscreen] .webgl-pan-button {
+  top: 80px !important;
+}

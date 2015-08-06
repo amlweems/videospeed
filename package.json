@@ -1,0 +1,22 @@
+{
+  "title": "videospeed",
+  "name": "videospeed",
+  "version": "0.0.1",
+  "description": "Modify playback speed of HTML5 videos",
+  "main": "index.js",
+  "author": "amlweems",
+  "engines": {
+    "firefox": ">=38.0a1",
+    "fennec": ">=38.0a1"
+  },
+  "license": "MIT",
+  "preferences": [
+    {
+      "name": "speed",
+      "title": "Video speed",
+      "description": "Video playback speed",
+      "type": "string",
+      "value": "1.0"
+    }
+  ]
+}
